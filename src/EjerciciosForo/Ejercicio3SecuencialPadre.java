@@ -21,7 +21,7 @@ public class Ejercicio3SecuencialPadre {
     public static void main(String[] args) throws IOException {
 
         String cadena = "fichero1.txt fichero2.txt fichero3.txt";
-        String comando = "java  Ejercicio3.Ejercicio3Secuencial " + cadena;
+        String comando = "java  EjerciciosForo.Ejercicio3Secuencial " + cadena;
         ProcessBuilder pb = new ProcessBuilder(comando.split("\\s"));
         pb.directory(new File("build/classes"));
         pb.redirectOutput(ProcessBuilder.Redirect.INHERIT);
