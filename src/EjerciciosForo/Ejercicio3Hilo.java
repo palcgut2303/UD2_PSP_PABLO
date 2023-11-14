@@ -9,11 +9,11 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-class Hilo implements Runnable{
+class HiloAdivina implements Runnable{
 
     String archivo;
 
-    public Hilo(String archivo) {
+    public HiloAdivina(String archivo) {
         this.archivo = archivo;
     }
     
@@ -41,9 +41,9 @@ public class Ejercicio3Hilo {
     
     public static void main(String[] args) throws InterruptedException {
     
-        Thread h1 = new Thread(new Hilo("fichero1.txt"));
-        Thread h2 = new Thread(new Hilo("fichero2.txt"));
-        Thread h3 = new Thread(new Hilo("fichero3.txt"));
+        Thread h1 = new Thread(new HiloAdivina("fichero1.txt"));
+        Thread h2 = new Thread(new HiloAdivina("fichero2.txt"));
+        Thread h3 = new Thread(new HiloAdivina("fichero3.txt"));
         
         long t_comienzo,t_fin;
         t_comienzo = System.currentTimeMillis();

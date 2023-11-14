@@ -5,11 +5,11 @@
  */
 package EjerciciosForo;
 
-class Hilo extends Thread {
+class HiloAdivina extends Thread {
 
     private final String identificador;
 
-    Hilo(String cadena) {
+    HiloAdivina(String cadena) {
         this.identificador = cadena;
     }
 
@@ -29,11 +29,11 @@ public class Ejercicio1 {
     public static void main(String[] args) {
 
         Thread[] threads = {
-            new Hilo("H1"),
-            new Hilo("H2"),
-            new Hilo("H3"),
-            new Hilo("H4"),
-            new Hilo("H5")
+            new HiloAdivina("H1"),
+            new HiloAdivina("H2"),
+            new HiloAdivina("H3"),
+            new HiloAdivina("H4"),
+            new HiloAdivina("H5")
         };
 
         for (Thread thread : threads) {

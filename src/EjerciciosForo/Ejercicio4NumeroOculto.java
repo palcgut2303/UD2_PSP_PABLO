@@ -19,21 +19,20 @@ public class Ejercicio4NumeroOculto {
     }
 
     public synchronized int propuestaNumero(int num) {
-        int numeroDevuelto = 0;
-        adivinado = false;
-        while (!adivinado) {
-            if (num == numero) {
-                numeroDevuelto = 1;
-                adivinado = true;
-            } else if (num != numero) {
-                numeroDevuelto = -1;
-                adivinado = true;
-            } else {
-                numeroDevuelto = 0;
-            }
+       
+        if(adivinado){
+            return -1;
+        }else if(num == numero){
+            adivinado = true;
+            return 1;
+        }else{
+            return 0;
         }
-
-        return numeroDevuelto;
     }
 
+    public int getNumero() {
+        return numero;
+    }
+    
+    
 }
