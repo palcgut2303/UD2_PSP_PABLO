@@ -24,7 +24,7 @@ class HiloAdivina implements Runnable {
         Random numero = new Random();
         int numeroRandom = numero.nextInt(10);
 
-        int resultado = numeroDelHilo.propuestaNumero(numeroRandom);
+        int resultado = numeroDelHilo.propuestaNumero(5);
         if (resultado == -1) {
 
             System.out.println("Hilo " + identificador + " numero adivinado por otro hilo.");
@@ -38,6 +38,7 @@ class HiloAdivina implements Runnable {
 
         }
 
+        
     }
 
 }
@@ -45,7 +46,7 @@ class HiloAdivina implements Runnable {
 public class Ejercicio4Aleatorio {
 
     public static void main(String[] args) throws InterruptedException {
-         Ejercicio4NumeroOculto numerosHilos[] = new Ejercicio4NumeroOculto[10];
+        /*Ejercicio4NumeroOculto numerosHilos[] = new Ejercicio4NumeroOculto[10];
 
         for (int i = 0; i < 10; i++) {
             Random rnd = new Random();
@@ -68,11 +69,11 @@ public class Ejercicio4Aleatorio {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-        }
+        }*/
 
-       /* Ejercicio4NumeroOculto numeroHilo1 = new Ejercicio4NumeroOculto(6);
+        Ejercicio4NumeroOculto numeroHilo1 = new Ejercicio4NumeroOculto(6);
         Ejercicio4NumeroOculto numeroHilo2 = new Ejercicio4NumeroOculto(5);
-        Ejercicio4NumeroOculto numeroHilo3 = new Ejercicio4NumeroOculto(1);
+        Ejercicio4NumeroOculto numeroHilo3 = new Ejercicio4NumeroOculto(2);
 
         Thread hilo1 = new Thread(new HiloAdivina(1, numeroHilo1));
         Thread hilo2 = new Thread(new HiloAdivina(2, numeroHilo2));
@@ -84,7 +85,7 @@ public class Ejercicio4Aleatorio {
         
         hilo1.join();
         hilo2.join();
-        hilo3.join();*/
+        hilo3.join();
         System.out.println("Juego terminado.");
     }
 

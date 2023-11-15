@@ -25,13 +25,15 @@ public class Ejercicio3Secuencial {
     }
 
     private static void contarCaracteres(String archivo) {
+        
         try ( BufferedReader br = new BufferedReader(new FileReader(archivo))) {
             int count = 0;
-            int c;
-            while ((c = br.read()) != -1) {
+            int linea;
+            while ((linea = br.read()) != -1) {
                 
                 count++;
             }
+            
             System.out.println("El archivo '" + archivo + "' tiene " + count + " caracteres.");
         } catch (IOException e) {
             System.err.println("Error al leer el archivo '" + archivo + "': " + e.getMessage());

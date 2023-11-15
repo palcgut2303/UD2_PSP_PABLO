@@ -28,6 +28,7 @@ public class Ejercicio4NumeroOculto {
         }else{
             return 0;
         }
+       
     }
 
     public int getNumero() {
