@@ -16,7 +16,6 @@ import java.util.logging.Logger;
  */
 class GestorTransferencias {
 
-    public boolean esDisponible = false;
     
     public synchronized boolean transferencia(Cuenta c1, Cuenta c2, int cantidad) throws InterruptedException {
         //Cuenta cuentaMenor, cuentaMayor;
@@ -29,9 +28,7 @@ class GestorTransferencias {
         }*/
         boolean result = false;
         
-        while(!esDisponible){
-            wait();
-        }
+        
         
         
         synchronized (c1) {
@@ -40,7 +37,7 @@ class GestorTransferencias {
                     c1.sacar(cantidad);
                     c2.ingresar(cantidad);
                     System.out.println(c1.getSaldo());
-                    esDisponible = true;
+                    Thread.sleep(100);
                     result = true;
                 }
             }
@@ -94,12 +91,10 @@ class Hilo implements Runnable {
         int cantidad = 10;
         int numTransf = 0;
         
-        for (int i = 0; i < 10000; i++) {
+        for (int i = 0; i < 100; i++) {
             try {
-                
                 if (transferencias.transferencia(c1, c2, cantidad)) {
                     numTransf++;
-                    notifyAll();
                 }
             } catch (InterruptedException ex) {
                 Logger.getLogger(Hilo.class.getName()).log(Level.SEVERE, null, ex);

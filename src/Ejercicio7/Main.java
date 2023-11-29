@@ -53,7 +53,7 @@ class HiloProductor implements Runnable {
             try {
                 char caracter = (char) (random.nextInt(26) + 'a');
                 cont.put(caracter);
-                Thread.sleep(90);
+                Thread.sleep(100);
             } catch (InterruptedException e) {
             }
         }
@@ -75,7 +75,7 @@ class HiloConsumidor implements Runnable {
         for (int i = 0; i < 10; i++) {
             try {
                 cont.get();
-                Thread.sleep(100);
+                Thread.sleep(200);
             } catch (InterruptedException ex) {
                 Logger.getLogger(HiloConsumidor.class.getName()).log(Level.SEVERE, null, ex);
             }
